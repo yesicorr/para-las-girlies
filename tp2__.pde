@@ -109,18 +109,23 @@ void draw() {
   println(mouseX, mouseY);
 }
 
+//ATENCIOOOON aca solo ejecuto el cambio de pantalla de la pantalla 2 a la 3, no pongo de la 3 a la 1 de nuevo porque queremos que la tres solo se cambie con el boton//
+
 void cambioPantalla() {
   // Cambio de pantallas
   if (estado.equals("pantallauno")) {
     estado = "pantallados";
   } else if (estado.equals("pantallados")) {
-    estado = "pantallatres";
+    estado = "pantallatres";                  //HASTA ACA
   }
   tiempoInicio = frameCount;
 }
 
+//EJECUCION DEL BOTON, la palabra dist esta en el video de colaboratorio donde el profe explica como se usa por si dudas.
+
 void mousePressed() {
   // Cambiar de pantalla al hacer clic en el botón en la pantalla tres
+  
   if (estado == "pantallatres" && dist(mouseX, mouseY, xBoton, yBoton) < diamBoton / 2) {
     estado = "pantallauno";
   }
